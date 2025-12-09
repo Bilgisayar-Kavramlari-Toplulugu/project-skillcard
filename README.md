@@ -1,13 +1,42 @@
-# Otomatik olarak Profil Kartı oluşturma projesi (Örnek)
+# Otomatik olarak Profil Kartı oluşturma projesi
 
 <div align="center">
 
 [![GitHub](https://img.shields.io/badge/GitHub-Bilgisayar-Kavramlari-Toplulugu-181717?style=flat-square&logo=github)](https://github.com/Bilgisayar-Kavramlari-Toplulugu/project-skillcard)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg?style=flat-square&logo=python)](https://www.python.org/)
+[![React](https://img.shields.io/badge/React-18.2+-61DAFB.svg?style=flat-square&logo=react)](https://reactjs.org/)
 
-**Part of [Otomatik olarak Profil Kartı oluşturma projesi](docs/Project-Definition.md)**
+**GitHub kullanıcı profillerini profesyonel CV formatında görüntüleme uygulaması**
 
 </div>
+
+---
+
+## ⚡ Hızlı Başlangıç
+
+### Tek Tıkla Çalıştır! 🚀
+
+```bash
+# ÇALIŞTIR.bat dosyasına çift tıklayın
+# veya PowerShell'de:
+.\ÇALIŞTIR.bat
+```
+
+**İşte bu kadar!** Script otomatik olarak her şeyi kurup başlatacak. 🎉
+
+### 🔑 GitHub Token (Opsiyonel ama Önerilir)
+
+GitHub API rate limit (saatte 60 istek) aşılmasını önlemek için GitHub token kullanmanızı öneririz:
+
+1. [GitHub Token Oluştur](https://github.com/settings/tokens/new) (public_repo yetkisi yeterli)
+2. `backend/.env` dosyası oluşturun:
+```bash
+GITHUB_TOKEN=your_github_token_here
+```
+3. Token ile rate limit 5000/saat'e çıkar
+
+📖 **Detaylı kılavuz:** [docs/HIZLI-BASLANGIC.md](docs/HIZLI-BASLANGIC.md)
 
 ---
 
@@ -20,54 +49,205 @@
 
 ## 📖 Hakkında
 
-<!-- Bu repository'nin ne yaptığını buraya yazın -->
+Bu proje, GitHub kullanıcılarının profil bilgilerini otomatik olarak çekerek profesyonel bir CV formatında sunar. Python (Flask) backend ve React frontend kullanılarak geliştirilmiştir.
 
-## 🚀 Kurulum
+### ✨ Özellikler
 
-### Gereksinimler
+- 🔍 GitHub kullanıcı adı veya profil linki ile arama
+- 👤 Ad, soyad ve profil bilgileri
+- 🔗 Sosyal medya bağlantıları (Twitter, Blog, Email)
+- 💻 Kullanılan programlama dilleri ve dağılımları
+- 📊 Repository istatistikleri (yıldız, fork, takipçi sayıları)
+- 📈 Contribution geçmişi ve son aktiviteler
+- 🌟 En popüler repository'ler
+- 🖨️ PDF/Yazdırma desteği
+- 📱 Responsive tasarım
 
-- Gerekli araçları buraya listeleyin
+## 🚀 Hızlı Başlangıç
 
-### Başlangıç
+### ⚡ Tek Tıkla Çalıştırma (Önerilen)
 
+Projeyi indirdikten sonra sadece şunu yapın:
+
+**Windows için:**
 ```bash
-git clone https://github.com/Bilgisayar-Kavramlari-Toplulugu/project-skillcard.git
-cd project-skillcard
-
-# Kurulum adımlarını buraya ekleyin
+# ÇALIŞTIR.bat dosyasına çift tıklayın
+# veya PowerShell'de:
+.\ÇALIŞTIR.bat
 ```
 
-## 💻 Kullanım
+Bu komut:
+- ✅ Gerekli bağımlılıkları otomatik kontrol eder
+- ✅ İlk kullanımda otomatik kurulum yapar
+- ✅ Backend ve Frontend'i başlatır
+- ✅ Tarayıcınızı otomatik açar
+
+### 📋 Gereksinimler
+
+Sisteminizde bunlar yüklü olmalı:
+- **Python 3.8+** - [İndir](https://www.python.org/downloads/)
+- **Node.js 14+** - [İndir](https://nodejs.org/)
+- Git (opsiyonel)
+
+### 🔧 Manuel Kurulum ve Çalıştırma
+
+İsterseniz manuel olarak da kurabilirsiniz:
+
+#### Backend Kurulumu
 
 ```bash
-# Uygulamayı çalıştırma komutunu buraya ekleyin
+cd backend
+python -m venv venv
+.\venv\Scripts\activate  # Windows
+pip install -r requirements.txt
 ```
+
+#### Frontend Kurulumu
+
+```bash
+cd frontend
+npm install
+```
+
+#### Manuel Başlatma
+
+**Backend:**
+```bash
+cd backend
+.\venv\Scripts\activate
+python app.py
+```
+
+**Frontend:**
+```bash
+cd frontend
+npm start
+```
+
+### 🎯 Alternatif Başlatma Yöntemleri
+
+```powershell
+# PowerShell scriptleri ile:
+.\run.ps1          # Otomatik kurulum + başlatma
+.\setup.ps1        # Sadece kurulum
+.\start.ps1        # Sadece başlatma
+```
+
+### Kullanım Adımları
+
+1. Tarayıcınızda http://localhost:3000 adresine gidin
+2. GitHub kullanıcı adını veya profil linkini girin (örn: `tlpkurt` veya `https://github.com/tlpkurt`)
+3. "Profil Oluştur" butonuna tıklayın
+4. Oluşturulan profil kartını görüntüleyin
+5. "CV Olarak Yazdır / PDF'e Aktar" butonuyla PDF olarak kaydedin
 
 ## 📁 Proje Yapısı
 
 ```
 project-skillcard/
-├── src/          # Kaynak kodlar
-├── tests/        # Testler
-├── docs/         # Dokümantasyon
-└── README.md     # Bu dosya
+├── ÇALIŞTIR.bat         # ⭐ TEK TIKLA BAŞLAT!
+├── run.ps1              # Otomatik kurulum + çalıştırma
+├── setup.ps1            # Kurulum scripti
+├── start.ps1            # Başlatma scripti
+├── backend/             # Python Flask API
+│   ├── app.py           # Ana Flask uygulaması
+│   ├── requirements.txt # Python bağımlılıkları
+│   └── .env.example     # Örnek environment dosyası
+├── frontend/            # React uygulaması
+│   ├── public/          # Statik dosyalar
+│   ├── src/             # Kaynak kodlar
+│   │   ├── components/  # React bileşenleri
+│   │   │   ├── ProfileCard.js
+│   │   │   └── ProfileCard.css
+│   │   ├── App.js       # Ana uygulama
+│   │   ├── App.css
+│   │   └── index.js
+│   └── package.json     # Node bağımlılıkları
+├── docs/                # Dokümantasyon
+│   └── USAGE.md         # Detaylı kullanım kılavuzu
+└── README.md            # Bu dosya
 ```
 
-## 🧪 Test
+## 🔧 Teknik Detaylar
+
+### Backend (Python Flask)
+
+- **Framework:** Flask 3.0.0
+- **GitHub API:** REST API v3
+- **CORS:** Çapraz kaynak istekleri için flask-cors
+- **HTTP İstekleri:** requests kütüphanesi
+
+#### API Endpoints
+
+- `GET /api/profile/<username>` - GitHub kullanıcı profil bilgilerini getirir
+- `GET /api/health` - API sağlık kontrolü
+
+#### Toplanan Veriler
+
+1. **Kişisel Bilgiler:** Ad, kullanıcı adı, bio, konum, şirket
+2. **Sosyal Medya:** GitHub, Twitter, Website, Email
+3. **İstatistikler:** Repository sayısı, takipçiler, yıldızlar
+4. **Programlama Dilleri:** Kullanılan diller ve dağılımları
+5. **Contribution:** Commit, PR, Issue aktiviteleri
+6. **Repository'ler:** En popüler projeler
+
+### Frontend (React)
+
+- **Framework:** React 18.2
+- **HTTP Client:** Axios
+- **Styling:** Vanilla CSS (Gradient tasarım)
+- **Responsive:** Mobile-first yaklaşım
+
+#### Özellikler
+
+- ⚡ Hızlı ve modern kullanıcı arayüzü
+- 🎨 Gradient ve modern tasarım
+- 📱 Tüm cihazlarda uyumlu
+- 🖨️ Yazdırma ve PDF desteği
+- ⌨️ URL veya kullanıcı adı ile arama
+
+## 🧪 API Kullanımı
+
+### Rate Limiting
+
+GitHub API saatte 60 istek limiti vardır. Daha fazla istek için GitHub Personal Access Token kullanabilirsiniz:
+
+1. GitHub'da Settings > Developer settings > Personal access tokens
+2. Yeni token oluşturun (public_repo yetkisi yeterli)
+3. `backend/.env` dosyasına ekleyin:
+   ```
+   GITHUB_TOKEN=your_token_here
+   ```
+
+### Örnek API İsteği
 
 ```bash
-# Test komutlarını buraya ekleyin
+curl http://localhost:5000/api/profile/hakanceran64
 ```
 
 ## 🤝 Katkıda Bulunma
 
 Katkıda bulunmak için lütfen [`CONTRIBUTING.md`](.github/CONTRIBUTING.md) dosyasını inceleyin.
 
+### Geliştirme Önerileri
+
+- [ ] Tema desteği (Dark/Light mode)
+- [ ] Daha fazla GitHub istatistiği
+- [ ] Farklı CV şablonları
+- [ ] Export formatları (JSON, Markdown)
+- [ ] Cache mekanizması
+- [ ] Docker desteği
+
 ## 📚 Dokümantasyon
 
 - [Proje Tanımı](docs/Project-Definition.md)
 - [Mimari Genel Bakış](docs/Architecture-Overview.md)
 - [Geliştirme Akışı](docs/Development-Workflow.md)
+
+## 🐛 Bilinen Sorunlar
+
+- GitHub API rate limiting (token kullanarak çözülebilir)
+- Çok fazla repository olan kullanıcılarda yavaşlama olabilir
 
 ## 📄 Lisans
 

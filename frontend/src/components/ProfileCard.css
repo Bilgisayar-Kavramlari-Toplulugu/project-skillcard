@@ -1,0 +1,926 @@
+.profile-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: fadeIn 0.3s ease-in;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Edit Controls */
+.edit-controls {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 100;
+}
+
+.edit-button {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+  background: #10b981;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.edit-button:hover {
+  background: #059669;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.edit-button.editing {
+  background: #2563eb;
+}
+
+.edit-button.editing:hover {
+  background: #1e40af;
+}
+
+/* Editable Inputs */
+.editable-input {
+  background: white;
+  border: 2px solid #3b82f6;
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+  outline: none;
+}
+
+.editable-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.name-input {
+  font-size: 1.75rem;
+  font-weight: 600;
+  width: 100%;
+  margin-bottom: 0.25rem;
+}
+
+.bio-input {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  resize: vertical;
+  min-height: 50px;
+}
+
+.meta-input {
+  font-size: 0.85rem;
+  padding: 0.2rem 0.4rem;
+  border-width: 1px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.social-input {
+  font-size: 0.85rem;
+  padding: 0.3rem 0.5rem;
+  flex: 1;
+  min-width: 150px;
+}
+
+.social-link.editable {
+  background: white;
+  color: #374151;
+  border: 2px solid #3b82f6;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.8rem;
+}
+
+/* Header Section */
+.profile-header {
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  color: white;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.profile-avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: 1.75rem;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.profile-username {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+}
+
+.profile-bio {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  opacity: 0.95;
+}
+
+.profile-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.meta-item {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+}
+
+/* Statistics Section */
+.statistics-section {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.stat-card {
+  background: #f9fafb;
+  padding: 0.75rem;
+  border-radius: 6px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+}
+
+.stat-card:hover {
+  border-color: #2563eb;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+/* Languages Section */
+.languages-section {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.languages-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.language-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  background: #f3f4f6;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  border: 1px solid #e5e7eb;
+}
+
+.language-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.language-name {
+  font-weight: 500;
+  color: #374151;
+}
+
+.language-count {
+  color: #6b7280;
+  font-size: 0.8rem;
+}
+
+/* Repositories Section */
+.repositories-section {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.repos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.repo-card {
+  background: #f9fafb;
+  padding: 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #e5e7eb;
+  transition: border-color 0.2s ease;
+}
+
+.repo-card:hover {
+  border-color: #2563eb;
+}
+
+.repo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 0.5rem;
+}
+
+.repo-name {
+  font-size: 0.95rem;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.repo-language {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+  color: white;
+}
+
+.repo-description {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.repo-stats {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Contributions Section */
+.contributions-section {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.contribution-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.contrib-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.75rem;
+  background: #f9fafb;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.contrib-icon {
+  font-size: 1.25rem;
+}
+
+.contrib-label {
+  color: #6b7280;
+  font-size: 0.75rem;
+}
+
+.contrib-value {
+  font-weight: 700;
+  color: #2563eb;
+  font-size: 1.25rem;
+}
+
+.recent-activities h4 {
+  margin-bottom: 0.75rem;
+  color: #1f2937;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.activities-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.activity-item {
+  display: grid;
+  grid-template-columns: 120px 1fr 100px;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: #f9fafb;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  border: 1px solid #e5e7eb;
+}
+
+.activity-type {
+  color: #2563eb;
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+
+.activity-repo {
+  color: #6b7280;
+  font-size: 0.75rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.activity-date {
+  color: #9ca3af;
+  text-align: right;
+  font-size: 0.7rem;
+}
+
+/* Social Section */
+.social-section {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 1rem;
+  background: #2563eb;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: background 0.2s ease;
+}
+
+.social-link:hover {
+  background: #1e40af;
+}
+
+.social-icon {
+  font-size: 1rem;
+}
+
+/* Streak Section */
+.streak-section {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.streak-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.streak-card {
+  background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.streak-value {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.streak-label {
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  opacity: 0.95;
+}
+
+/* Organizations Section */
+.organizations-section {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.orgs-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.75rem;
+}
+
+.org-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem;
+  background: #f9fafb;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1px solid #e5e7eb;
+  transition: border-color 0.2s ease;
+}
+
+.org-item:hover {
+  border-color: #2563eb;
+}
+
+.org-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.org-name {
+  font-size: 0.75rem;
+  color: #374151;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+/* Recent Repos Section */
+.recent-repos-section {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.recent-repos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.recent-repo-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: #f9fafb;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1px solid #e5e7eb;
+  align-items: center;
+  transition: border-color 0.2s ease;
+}
+
+.recent-repo-item:hover {
+  border-color: #2563eb;
+}
+
+.recent-repo-name {
+  font-size: 0.85rem;
+  color: #2563eb;
+  font-weight: 500;
+}
+
+.recent-repo-lang {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+  color: white;
+}
+
+.recent-repo-date {
+  font-size: 0.7rem;
+  color: #6b7280;
+}
+
+/* Gists Section */
+.gists-section {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.gists-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.gist-item {
+  padding: 0.75rem;
+  background: #f9fafb;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1px solid #e5e7eb;
+  transition: border-color 0.2s ease;
+}
+
+.gist-item:hover {
+  border-color: #2563eb;
+}
+
+.gist-description {
+  font-size: 0.85rem;
+  color: #374151;
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+}
+
+.gist-files {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Licenses Section */
+.licenses-section {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.licenses-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.license-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  background: #f3f4f6;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  border: 1px solid #e5e7eb;
+}
+
+.license-name {
+  font-weight: 500;
+  color: #374151;
+}
+
+.license-count {
+  color: #6b7280;
+  font-size: 0.8rem;
+}
+
+/* Repo Topics */
+.repo-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+}
+
+.topic-tag {
+  font-size: 0.65rem;
+  padding: 0.15rem 0.4rem;
+  background: #dbeafe;
+  color: #1e40af;
+  border-radius: 8px;
+}
+
+/* Print Section */
+.print-section {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.print-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  background: #2563eb;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.print-button:hover {
+  background: #1e40af;
+}
+
+/* Print Styles - Tek Sayfaya Sigdir */
+@media print {
+  @page {
+    size: A4;
+    margin: 0.3cm;
+  }
+
+  * {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  body {
+    background: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .App-header,
+  .App-footer,
+  .search-container,
+  .print-section,
+  .no-print,
+  .edit-controls {
+    display: none !important;
+  }
+
+  .editable-input {
+    border: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  .social-link.editable {
+    border: none;
+    background: #2563eb;
+    color: white;
+  }
+
+  .profile-card {
+    box-shadow: none;
+    max-width: 100%;
+    margin: 0;
+    page-break-inside: avoid;
+    font-size: 11px;
+  }
+
+  .profile-header {
+    padding: 0.5rem 0.75rem;
+    page-break-after: avoid;
+  }
+
+  .profile-avatar img {
+    width: 50px;
+    height: 50px;
+    border: 2px solid white;
+  }
+
+  .profile-name {
+    font-size: 1.1rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .profile-username {
+    font-size: 0.75rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .profile-bio {
+    font-size: 0.7rem;
+    line-height: 1.2;
+    margin-bottom: 0.3rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .profile-meta {
+    font-size: 0.65rem;
+    gap: 0.4rem;
+  }
+
+  .meta-item {
+    padding: 0.15rem 0.4rem;
+  }
+
+  .statistics-section,
+  .languages-section,
+  .repositories-section,
+  .contributions-section,
+  .social-section {
+    padding: 0.4rem 0.75rem;
+    page-break-inside: avoid;
+  }
+
+  .section-title {
+    font-size: 0.85rem;
+    margin-bottom: 0.35rem;
+    page-break-after: avoid;
+    font-weight: 700;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.3rem;
+  }
+
+  .stat-card {
+    padding: 0.3rem;
+    background: #f9fafb;
+  }
+
+  .stat-value {
+    font-size: 0.95rem;
+  }
+
+  .stat-label {
+    font-size: 0.55rem;
+    margin-top: 0.1rem;
+  }
+
+  .languages-grid {
+    gap: 0.25rem;
+  }
+
+  .language-item {
+    padding: 0.2rem 0.45rem;
+    font-size: 0.65rem;
+  }
+
+  .language-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .language-count {
+    font-size: 0.6rem;
+  }
+
+  .repos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.35rem;
+  }
+
+  .repo-card {
+    padding: 0.5rem;
+  }
+
+  .repo-name {
+    font-size: 0.75rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .repo-language {
+    font-size: 0.6rem;
+    padding: 0.1rem 0.35rem;
+  }
+
+  .repo-description {
+    font-size: 0.65rem;
+    margin-bottom: 0.3rem;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .repo-stats {
+    font-size: 0.6rem;
+    gap: 0.5rem;
+  }
+
+  .repo-topics {
+    gap: 0.2rem;
+    margin-top: 0.25rem;
+  }
+
+  .topic-tag {
+    font-size: 0.55rem;
+    padding: 0.1rem 0.3rem;
+  }
+
+  .contribution-stats {
+    gap: 0.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .contrib-item {
+    padding: 0.35rem;
+  }
+
+  .contrib-icon {
+    font-size: 1rem;
+  }
+
+  .contrib-value {
+    font-size: 0.85rem;
+  }
+
+  .contrib-label {
+    font-size: 0.6rem;
+  }
+
+  .recent-activities {
+    display: none;
+  }
+
+  .social-links {
+    gap: 0.3rem;
+  }
+
+  .social-link {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.65rem;
+  }
+
+  .social-icon {
+    font-size: 0.85rem;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .profile-name {
+    font-size: 1.4rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .stat-card {
+    padding: 0.5rem;
+  }
+
+  .repos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contribution-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .activity-item {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .activity-date {
+    text-align: left;
+  }
+}

@@ -1,0 +1,706 @@
+/* ATS-Compatible CV Styling */
+.profile-card.ats-cv {
+  background: white;
+  max-width: 210mm;
+  margin: 0 auto;
+  padding: 0;
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  color: #000;
+  line-height: 1.5;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Edit Controls */
+.edit-controls {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 100;
+}
+
+.edit-button {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+  background: #10b981;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.edit-button:hover {
+  background: #059669;
+}
+
+.edit-button.editing {
+  background: #2563eb;
+}
+
+/* Add/Remove Buttons */
+.add-button {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  color: white;
+  background: #10b981;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.add-button:hover {
+  background: #059669;
+}
+
+.remove-button {
+  padding: 0.3rem 0.8rem;
+  font-size: 0.75rem;
+  color: white;
+  background: #ef4444;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.remove-button:hover {
+  background: #dc2626;
+}
+
+/* CV Header */
+.cv-header {
+  background: #1e3a8a;
+  color: white;
+  padding: 2rem;
+  margin-bottom: 0;
+}
+
+.cv-header-content {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.cv-avatar {
+  flex-shrink: 0;
+}
+
+.cv-avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid white;
+  object-fit: cover;
+}
+
+.cv-personal-info {
+  flex: 1;
+}
+
+.cv-name {
+  font-size: 2rem;
+  margin: 0 0 0.25rem 0;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.cv-title {
+  font-size: 1.2rem;
+  margin: 0 0 0.75rem 0;
+  font-weight: 400;
+  opacity: 0.95;
+}
+
+.cv-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+.cv-contact span {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Editable Inputs */
+.editable-input {
+  background: white;
+  border: 2px solid #3b82f6;
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+  outline: none;
+  font-size: 1rem;
+}
+
+.editable-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.cv-name-input {
+  font-size: 2rem;
+  font-weight: 700;
+  width: 100%;
+  margin-bottom: 0.25rem;
+}
+
+.cv-title-input {
+  font-size: 1.2rem;
+  width: 100%;
+  margin-bottom: 0.75rem;
+}
+
+.cv-contact-input {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  flex: 1;
+  min-width: 200px;
+}
+
+.cv-summary-input {
+  width: 100%;
+  min-height: 80px;
+  resize: vertical;
+  font-family: inherit;
+  line-height: 1.6;
+}
+
+/* CV Sections */
+.cv-section {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cv-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  color: #1e3a8a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #1e3a8a;
+  padding-bottom: 0.5rem;
+}
+
+.cv-summary {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.cv-placeholder {
+  color: #9ca3af;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* Experience */
+.cv-experience-item {
+  margin-bottom: 1.5rem;
+}
+
+.cv-experience-item:last-child {
+  margin-bottom: 0;
+}
+
+.cv-exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 0.5rem;
+}
+
+.cv-exp-position {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+  color: #000;
+}
+
+.cv-exp-company {
+  font-size: 0.95rem;
+  margin: 0;
+  color: #374151;
+  font-weight: 500;
+}
+
+.cv-exp-date {
+  font-size: 0.85rem;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.cv-exp-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+  color: #4b5563;
+}
+
+.cv-exp-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Skills */
+.cv-skills-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.cv-skill-category {
+  margin-bottom: 0.5rem;
+}
+
+.cv-skill-cat-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: #374151;
+}
+
+.cv-skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cv-skill-tag {
+  background: #f3f4f6;
+  color: #1f2937;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  border: 1px solid #d1d5db;
+}
+
+/* GitHub Stats */
+.cv-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.cv-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cv-stat-label {
+  font-size: 0.8rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.cv-stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+/* Projects */
+.cv-project-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.cv-project-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.cv-project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 0.5rem;
+}
+
+.cv-project-name {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+  color: #000;
+}
+
+.cv-project-stats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.cv-project-desc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0 0 0.5rem 0;
+  color: #4b5563;
+}
+
+.cv-project-techs,
+.cv-project-lang {
+  font-size: 0.85rem;
+  color: #374151;
+  margin: 0.25rem 0;
+}
+
+.cv-project-techs strong,
+.cv-project-lang strong {
+  font-weight: 600;
+}
+
+/* Education */
+.cv-education-item {
+  margin-bottom: 1.5rem;
+}
+
+.cv-education-item:last-child {
+  margin-bottom: 0;
+}
+
+.cv-edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.cv-edu-degree {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+  color: #000;
+}
+
+.cv-edu-school {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #374151;
+}
+
+.cv-edu-date {
+  font-size: 0.85rem;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.cv-edu-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Certifications */
+.cv-cert-item {
+  margin-bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cv-cert-item:last-child {
+  margin-bottom: 0;
+}
+
+.cv-cert-content {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #374151;
+}
+
+/* GitHub Activity */
+.cv-activity-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.cv-activity-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cv-activity-label {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.cv-activity-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+/* Print Button */
+.print-section {
+  padding: 2rem;
+  text-align: center;
+  background: #f9fafb;
+}
+
+.print-button {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: #1e3a8a;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.print-button:hover {
+  background: #1e40af;
+}
+
+/* Print Styles */
+@media print {
+  @page {
+    size: A4;
+    margin: 0.5cm;
+  }
+
+  * {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .profile-card.ats-cv {
+    box-shadow: none;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 9pt;
+  }
+
+  .edit-controls,
+  .no-print,
+  .add-button,
+  .remove-button,
+  .print-section,
+  .print-button {
+    display: none !important;
+  }
+
+  .editable-input {
+    border: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  .cv-header {
+    padding: 0.8cm 1cm;
+    page-break-after: avoid;
+  }
+
+  .cv-header-content {
+    gap: 1cm;
+  }
+
+  .cv-avatar img {
+    width: 60px;
+    height: 60px;
+    border-width: 2px;
+  }
+
+  .cv-name {
+    font-size: 1.4rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .cv-title {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .cv-contact {
+    font-size: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .cv-section {
+    padding: 0.5cm 1cm;
+    page-break-inside: avoid;
+  }
+
+  .cv-section-title {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+    padding-bottom: 0.25rem;
+    border-bottom-width: 1.5px;
+  }
+
+  .cv-summary {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .cv-experience-item,
+  .cv-project-item,
+  .cv-education-item {
+    page-break-inside: avoid;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .cv-experience-item:last-child,
+  .cv-project-item:last-child,
+  .cv-education-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .cv-exp-position,
+  .cv-project-name,
+  .cv-edu-degree {
+    font-size: 0.85rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .cv-exp-company,
+  .cv-exp-desc,
+  .cv-project-desc,
+  .cv-edu-school {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .cv-exp-desc,
+  .cv-project-desc {
+    margin-bottom: 0.25rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .cv-exp-date,
+  .cv-edu-date,
+  .cv-project-stats {
+    font-size: 0.7rem;
+  }
+
+  .cv-project-techs,
+  .cv-project-lang {
+    font-size: 0.7rem;
+    margin: 0.15rem 0;
+  }
+
+  .cv-skills-grid {
+    gap: 0.5rem;
+  }
+
+  .cv-skill-cat-title {
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .cv-skill-tag {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .cv-stats-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.4rem;
+  }
+
+  .cv-stat-label {
+    font-size: 0.65rem;
+  }
+
+  .cv-stat-value {
+    font-size: 1rem;
+  }
+
+  .cv-cert-item {
+    margin-bottom: 0.4rem;
+  }
+
+  .cv-cert-content {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+
+  /* Limit items to fit one page */
+  .cv-experience-item:nth-child(n+4) {
+    display: none;
+  }
+
+  .cv-project-item:nth-child(n+4) {
+    display: none;
+  }
+
+  .cv-education-item:nth-child(n+3) {
+    display: none;
+  }
+
+  .cv-cert-item:nth-child(n+4) {
+    display: none;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cv-header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cv-name {
+    font-size: 1.5rem;
+  }
+
+  .cv-title {
+    font-size: 1rem;
+  }
+
+  .cv-contact {
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .cv-section {
+    padding: 1rem;
+  }
+
+  .cv-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cv-exp-header,
+  .cv-project-header,
+  .cv-edu-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .cv-exp-date,
+  .cv-edu-date {
+    text-align: left;
+  }
+
+  .cv-activity-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
