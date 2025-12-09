@@ -7,6 +7,18 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/Dotnet.gitignore
 
+# Python Backend
+backend/__pycache__/
+backend/*.pyc
+backend/.env
+backend/venv/
+backend/env/
+
+# React Frontend
+frontend/node_modules/
+frontend/build/
+frontend/.env.local
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
