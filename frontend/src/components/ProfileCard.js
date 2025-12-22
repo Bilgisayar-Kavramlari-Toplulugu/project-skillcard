@@ -178,7 +178,9 @@ const ProfileCard = ({ data }) => {
             <h4 className="cv-skill-cat-title">Programlama Dilleri</h4>
             <div className="cv-skill-items">
               {languages.slice(0, 8).map((lang, index) => (
-                <span key={index} className="cv-skill-tag">
+                <span key={index} className="cv-skill-tag"
+                style={{ borderLeft:'4px solid' +  getLanguageColor(lang.language), backgroundColor:getLanguageColor(lang.language)+'15'    }}
+                >
                   {lang.language}
                 </span>
               ))}
