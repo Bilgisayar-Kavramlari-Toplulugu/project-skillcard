@@ -11,7 +11,7 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!username.trim()) {
       setError('Lütfen bir GitHub kullanıcı adı girin');
       return;
@@ -38,7 +38,7 @@ function App() {
 
   const extractGitHubUsername = (url) => {
     // GitHub URL'den kullanıcı adını çıkar
-    const match = url.match(/github\.com\/([^\/]+)/);
+    const match = url.match(/github\.com\/([^/]+)/);
     return match ? match[1] : url;
   };
 
@@ -67,8 +67,8 @@ function App() {
                 onChange={handleInputChange}
                 className="github-input"
               />
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="search-button"
                 disabled={loading}
               >
